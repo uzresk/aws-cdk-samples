@@ -13,7 +13,8 @@ export function handler(event: Target[], context: Context, callback: any): void 
         };
         ecs.updateService(params, (err, data) => {
             if (err) {
-                console.log(err, err.stack);
+                console.log(err,err.stack);
+                throw new Error("[ERROR]DesiredCount change failure.")
             } else {
                 console.log(data);
             }
