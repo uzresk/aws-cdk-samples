@@ -1,0 +1,36 @@
+[
+  {
+    "name": "start",
+    "description": "Test-1, Test-2 start at 8:00",
+    "targets": [
+      {
+        "cluster": "Test-1",
+        "service": "hue",
+        "desiredCount": 1
+      },
+      {
+        "cluster": "Test-2",
+        "service": "hue",
+        "desiredCount": 1
+      }
+    ],
+    "event": "0 23 * * ? *"
+  },
+  {
+    "name": "stop",
+    "description": "Test-1, Test-2 stop at 20:00",
+    "targets": [
+      {
+        "cluster": "Test-1",
+        "service": "hue",
+        "desiredCount": 0
+      },
+      {
+        "cluster": "Test-2",
+        "service": "hue",
+        "desiredCount": 0
+      }
+    ],
+    "event": "0 11 * * ? *"
+  }
+]
